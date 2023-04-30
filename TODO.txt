@@ -1,0 +1,38 @@
+--------------------------------------------------- MANDATORY ---------------------------------------------------
+
+1 > PRELIMINARY ANALISYS
+
+    BRIEF DESCRIPTION 
+        a. (Practical_01) | what type of documents does it contain?
+        b. (Practical_01) | how many documents are there?
+        c. (Practical_01) | calculate and visualise some simple statistics for the collection, e.g. the average document length, the average vocabulary size, etc.
+
+        Comments:   -1a e 1b sono già fatti bene nel paper, basta farla riassumere a chatGPT e controllarli, ci vuole niente
+                    -per 1c ho già scritto due righe di codice, non è niente di chè. Devo solo fare qualche grafico
+
+    PLAY AROUND: for example
+        d. (Practical_04) | cluster the documents and visualise the clusters to see what types of groups are present (or whether the known classes can be found);
+        e. (Practical 03) | index the documents so that you can perform keyword search over them;
+        f. (Practical_05) | train a Word2Vec embedding on the data and investigate the properties of the resulting embedding 
+
+2 > TRAINING MODELS
+
+        g. train a model to perform that task (by fine-tuning models on the training data);
+        h. test pre-trained models on the task (if they already exist); and
+        i. evaluate different models and compare their performance.
+        
+        HINT: as a minimum here we would expect to see 
+                - linear classifier trained on the data (if an appropriate for the task) 
+                - deep learning model, such as BERT
+              compared.
+
+--------------------------------------------------- OPTIONAL ---------------------------------------------------
+
+3 > POSSIBLE EXTENSION
+
+    Depending on the dataset chosen there will be many additional investigations you can perform. For
+    instance, oftentimes we can improve performance of a model on a particular task by simply including
+    additional data that is related to the task in its training set. So see if you can find other data that helps
+    with the task that you chose.
+
+    ?? MUST BE DEFINED LATER
