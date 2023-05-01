@@ -2,7 +2,7 @@
 
 1 > PRELIMINARY ANALISYS
 
-    BRIEF DESCRIPTION 
+    BRIEF DESCRIPTION                                                                                                          """"" ELIA """""
         a. (Practical_01) | what type of documents does it contain?
         b. (Practical_01) | how many documents are there?
         c. (Practical_01) | calculate and visualise some simple statistics for the collection, e.g. the average document length, the average vocabulary size, etc.
@@ -11,9 +11,11 @@
                     -per 1c ho già scritto due righe di codice, non è niente di chè. Devo solo fare qualche grafico
 
     PLAY AROUND: for example
-        d. (Practical_04) | cluster the documents and visualise the clusters to see what types of groups are present (or whether the known classes can be found);
-        e. (Practical 03) | index the documents so that you can perform keyword search over them;
-        f. (Practical_05) | train a Word2Vec embedding on the data and investigate the properties of the resulting embedding 
+        d. (Practical_04) | cluster the documents and visualise the clusters to see what types of groups are present            """"" ELIA SE AVANZA TEMPO """""
+                            (or whether the known classes can be found);
+        e. (Practical 03) | index the documents so that you can perform keyword search over them;                               !!!!!! RIMOSSO !!!!!!!
+        f. (Practical_05) | train a Word2Vec embedding on the data and investigate the properties of the resulting embedding    """"" ENRICO """""
+        x.                | post-taggin                                                                                         """"" MICHEAL """""
 
 2 > TRAINING MODELS
 
