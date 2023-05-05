@@ -10,12 +10,14 @@ oTag = "O"
 types = set()
 
 files = {
-	"wikinews_train.tsv": "WN_train.tsv",
-	"wikinews_test.tsv": "WN_dev.tsv",
-	"fiction_train.tsv": "FIC_train.tsv",
-	"fiction_test.tsv": "FIC_dev.tsv",
-	"degasperi_train.tsv": "ADG_train.tsv",
-	"degasperi_test.tsv": "ADG_dev.tsv",
+	#"wikinews_train.tsv": "WN_train.tsv",
+	#"wikinews_test.tsv": "WN_dev.tsv",
+	#"fiction_train.tsv": "FIC_train.tsv",
+	#"fiction_test.tsv": "FIC_dev.tsv",
+	#"degasperi_train.tsv": "ADG_train.tsv",
+	#"degasperi_test.tsv": "ADG_dev.tsv",
+	"moro_train.tsv": "moro_train_BIO.tsv",
+	"moro_test.tsv": "moro_test_BIO.tsv",
 }
 
 count = {}
