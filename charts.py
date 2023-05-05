@@ -7,6 +7,8 @@ from matplotlib import rc
 
 SPIDER_ROW_N = 2
 SPIDER_COL_N = 2
+BAR_ROW_N = 1 
+BAR_COL_N = 2
 
 def to_lowerCase(df):
     return pd.DataFrame({'Token': df['Token'].str.lower(), 'Entity': df['Entity']})
@@ -21,7 +23,6 @@ def spider_plot(df, group, title, subplot_idx):
     # What will be the angle of each axis in the plot? (we divide the plot / number of variable)
     angles = [n / float(N) * 2 * pi for n in range(N)]
     angles += angles[:1]
-    print(angles)
     
     # Initialise the spider plot
     ax = plt.subplot(SPIDER_ROW_N, SPIDER_COL_N, subplot_idx, polar=True)
@@ -155,9 +156,12 @@ doc_len_test = [stats[i]['doc_len'] for i in stats.keys() if 'test' in str(i)]
 n_punct = [stats[i]['n_punct'] for i in stats.keys() if 'test' not in str(i)]
 n_punct_test = [stats[i]['n_punct'] for i in stats.keys() if 'test' in str(i)]
 
-o = [stats[i]['n_O'] for i in stats.keys() if 'IOB' not in str(i)]
-punct = [stats[i]['n_punct'] for i in stats.keys() if 'IOB' not in str(i)]
+o = [stats[i]['n_O'] for i in stats.keys() if 'test' not in str(i)]
+punct = [stats[i]['n_punct'] for i in stats.keys() if 'test' not in str(i)]
 
+
+o_test = [stats[i]['n_O'] for i in stats.keys() if 'test' in str(i)]
+punct_test = [stats[i]['n_punct'] for i in stats.keys() if 'test' in str(i)]
 
 ############################################################### spider plots ###############################################################
 
@@ -219,28 +223,40 @@ spider_plot( pd.DataFrame({
 plt.show()
 
 
-def stacked_bar_plot(names, data):
+def stacked_bar_plot(col_names, data, labels_name, title, subplot_idx):
     
     # Names of group and bar width
     barWidth = 1
-    bars = []
-    n_col = np.arange(len(names))
+    bars = np.zeros(len(col_names))
+    n_col = np.arange(len(col_names))
+    plt.subplot(BAR_ROW_N, BAR_COL_N, subplot_idx)
 
-    for i in range(len(names)):
-        plt.bar(n_col, data[i], bottom=bars, edgecolor='white', width=barWidth, label=names[i])
+
+    for i in range(len(data)):
+        print(n_col, data[i], bars)
+        plt.bar(n_col, data[i], bottom=bars, edgecolor='white', width=barWidth, label=labels_name[i])
         bars = np.add(bars, data[i]).tolist()
 
     bars = np.add(bper, iper).tolist()
-
     
     # Custom X axis
-    plt.xticks(r, names, fontweight='bold')
-    plt.xlabel("group")
+    plt.xticks(n_col, col_names, fontweight='bold')
     plt.legend()
-    #ax.set_yscale('log')
-    #ax.set_ybound(1, 1000000)
+    plt.title(title)
+
     
     # Show graphic
-stacked_bar_plot(['doc_len', 'voc_size', 'n_punct', 'n_O'],
-                 [doc_len, voc_size, n_punct, o])
+stacked_bar_plot(['Moro', 'deGasperi', 'Fiction', 'Wikinews'],
+                 [punct, [o[i]-punct[i] for i in range(len(o))]],
+                 ['punct', 'O'],
+                 'Train sets',
+                 1)
+
+stacked_bar_plot(['Moro', 'deGasperi', 'Fiction', 'Wikinews'],
+                 [punct_test, [o_test[i]-punct_test[i] for i in range(len(o_test))]],
+                 ['punct', 'O'],
+                 'Test sets',
+                 2)
+
+
 plt.show()
