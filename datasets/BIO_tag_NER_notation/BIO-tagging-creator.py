@@ -10,12 +10,12 @@ oTag = "O"
 types = set()
 
 files = {
-	#"wikinews_train.tsv": "WN_train.tsv",
-	#"wikinews_test.tsv": "WN_dev.tsv",
-	#"fiction_train.tsv": "FIC_train.tsv",
-	#"fiction_test.tsv": "FIC_dev.tsv",
-	#"degasperi_train.tsv": "ADG_train.tsv",
-	#"degasperi_test.tsv": "ADG_dev.tsv",
+	#"wikinews_train.tsv": "wikinews_train_BIO.tsv",
+	#"wikinews_test.tsv": "wikinews_test_BIO.tsv",
+	#"fiction_train.tsv": "fiction_train_BIO.tsv",
+	#"fiction_test.tsv": "fiction_test_BIO.tsv",
+	#"degasperi_train.tsv": "degasperi_train_BIO.tsv",
+	#"degasperi_test.tsv": "degasperi_test_BIO.tsv",
 	"moro_train.tsv": "moro_train_BIO.tsv",
 	"moro_test.tsv": "moro_test_BIO.tsv",
 }
@@ -23,7 +23,7 @@ files = {
 count = {}
 
 for file in files:
-	with open(os.path.join("..", "dataset", file), "r") as f:
+	with open(os.path.join("..", "Inside_outside_NER_notation", file), "r") as f:
 		outFile = files[file]
 		count[outFile] = {"sentences": 0, "tags": {}, "tokens": 0}
 
