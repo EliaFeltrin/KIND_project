@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from math import pi
 from matplotlib import rc
 
+PATH_TO_DATASET = './KIND_project/datasets/Inside_outside_NER_notation'
+nonBIO_PATH = './KIND_project/datasets/Inside_outside_NER_notation/'
+
 SPIDER_ROW_N = 2
 SPIDER_COL_N = 2
 BAR_ROW_N = 1 
@@ -60,16 +63,15 @@ def spider_plot(df, group, title, subplot_idx):
 
 ############################################################### reading datasets ###############################################################
 
-ds = {'ds_mr' : pd.read_csv('./KIND_project/dataset/KIND-main/dataset/moro_train.tsv', sep='\t', header=None),
-      'ds_mr_test' : pd.read_csv('./KIND_project/dataset/KIND-main/dataset/moro_test.tsv', sep='\t', header=None),
+ds = {'ds_mr'           : pd.read_csv(nonBIO_PATH + 'moro_train.tsv', sep='\t', header=None),
+      'ds_mr_test'      : pd.read_csv(nonBIO_PATH + 'moro_test.tsv', sep='\t', header=None),
       
-      'ds_dg_IOB' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/ADG_train.tsv', sep='\t', header=None),
-      'ds_fc_IOB' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/FIC_train.tsv', sep='\t', header=None),
-      'ds_wn_IOB' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/WN_train.tsv', sep='\t', header=None),
-      
-      'ds_dg_IOB_test' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/ADG_dev.tsv', sep='\t', header=None),
-      'ds_fc_IOB_test' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/FIC_dev.tsv', sep='\t', header=None),
-      'ds_wn_IOB_test' : pd.read_csv('./KIND_project/dataset/KIND-main/evalita-2023/WN_dev.tsv', sep='\t', header=None)
+      'ds_dg_IOB'       : pd.read_csv(PATH_TO_DATASET + 'degasperi_train_BIO.tsv', sep='\t', header=None),
+      'ds_fc_IOB'       : pd.read_csv(PATH_TO_DATASET + 'fiction_train_BIO.tsv', sep='\t', header=None),
+      'ds_wn_IOB'       : pd.read_csv(PATH_TO_DATASET + 'wikinews_train_BIO.tsv', sep='\t', header=None),
+      'ds_dg_IOB_test'  : pd.read_csv(PATH_TO_DATASET + 'degasperi_test_BIO.tsv', sep='\t', header=None),
+      'ds_fc_IOB_test'  : pd.read_csv(PATH_TO_DATASET + 'fiction_test_BIO.tsv', sep='\t', header=None),
+      'ds_wn_IOB_test'  : pd.read_csv(PATH_TO_DATASET + 'wikinews_test_BIO.tsv', sep='\t', header=None)
 }
 
 ############################################################### calculating stats ###############################################################
